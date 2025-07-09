@@ -19,34 +19,34 @@ Welcome to **ARDE-N-BEATS**, an implementation of a novel **Adaptive Reinitializ
 
 ## 📂 Project Files
 
-- ARDE.py: Core implementation of the ARDE-N-BEATS optimization algorithm.
+- `ARDE.py`: Core implementation of the ARDE-N-BEATS optimization algorithm.
 
 ---
 
 ## 🧠 How It Works
 
-1. **Initialize Population** with P0 candidates  
-2. **Select Best P1 Candidates** based on a fitness threshold  
+1. **Initialize Population** with `P0` candidates  
+2. **Select Best `P1` Candidates** based on a fitness threshold  
 3. **Mutate + Crossover** new solutions using adaptive control parameters  
 4. **Select Elites** to survive to the next generation  
-5. **Early Stop** if best fitness doesn't improve for k generations  
+5. **Early Stop** if best fitness doesn't improve for `k` generations  
 
 ---
 
 ## ⚙️ Parameters
 
-You can configure these directly inside ARDE.py:
+You can configure these directly inside `ARDE.py`:
 
 | Parameter            | Description                                  | Example |
 |----------------------|----------------------------------------------|---------|
-| D                  | Problem dimensions                           | 3     |
-| bL, bU           | Lower and upper bounds                       | [-5], [5] |
-| P0, P1           | Initial and reinitialized population sizes   | 9, 5 |
-| FL, FU           | Mutation factor bounds                       | 0.8, 1.0 |
-| Cr                 | Crossover rate                               | 0.5   |
-| maxG               | Max number of generations                    | 100   |
-| k                  | Early stopping patience                      | 5     |
-| fitness_threshold  | Reinitialization threshold                   | 10    |
+| `D`                  | Problem dimensions                           | `3`     |
+| `bL`, `bU`           | Lower and upper bounds                       | `[-5]`, `[5]` |
+| `P0`, `P1`           | Initial and reinitialized population sizes   | `9`, `5` |
+| `FL`, `FU`           | Mutation factor bounds                       | `0.8`, `1.0` |
+| `Cr`                 | Crossover rate                               | `0.5`   |
+| `maxG`               | Max number of generations                    | `100`   |
+| `k`                  | Early stopping patience                      | `5`     |
+| `fitness_threshold`  | Reinitialization threshold                   | `10`    |
 
 ---
 
@@ -54,7 +54,7 @@ You can configure these directly inside ARDE.py:
 
 To visualize how the best fitness improves over generations, add this snippet at the end of the script:
 
-python
+```python
 import matplotlib.pyplot as plt
 plt.plot([min(g) for g in fitness_values_history])
 plt.title("Best Fitness Over Generations")
